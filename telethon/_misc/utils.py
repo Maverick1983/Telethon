@@ -656,11 +656,11 @@ def get_attributes(file, *, attributes=None, mime_type=None,
     """
     # Note: ``file.name`` works for :tl:`InputFile` and some `IOBase` streams
     name = file if isinstance(file, str) else getattr(file, 'name', 'unnamed')
-    if mime_type is None:
-        try:
-            mime_type = mimetypes.guess_type(name)[0]
-        except Exception as e:
-            print(e)
+    #if mime_type is None:
+    #    try:
+    #        mime_type = mimetypes.guess_type(name)[0]
+    #    except Exception as e:
+    #        print(e)
 
     attr_dict = {_tl.DocumentAttributeFilename:
         _tl.DocumentAttributeFilename(os.path.basename(name))}
